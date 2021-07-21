@@ -44,7 +44,6 @@ function App() {
     <ChakraProvider theme={theme}>
       <Box textAlign="center" fontSize="xl">
         <Grid minH="40vh" p={3}>
-
           <NavBar />
 
             <form onSubmit={onSubmit}>

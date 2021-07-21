@@ -31,11 +31,12 @@ function SentimenItem(props){
     if (sentiment < 0) {
         sentimentText = "Négatif"
         backGround = "orange.300"
-    } else if (sentiment < 0.118) {
-        sentimentText = "Neutre"
-    } else {
+    } else if (sentiment > 0.118) {
+        
         sentimentText = "Positif"
         backGround = "green.300"
+    } else {
+        sentimentText = "Neutre"
     };
 
     return(
