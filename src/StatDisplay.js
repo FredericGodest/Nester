@@ -8,9 +8,12 @@ import {
   } from "@chakra-ui/react"
 
 function StatItem(props){
-    const value = props.value;
+    var value = props.value;
     const description = props.description;
     const background = props.background;
+    if (value === undefined){
+        value = 0
+    }
     return(
         <Box>
             <Stat bg={background} rounded={'lg'} border={'1px solid'} shadow={'xl'} borderColor={useColorModeValue('gray.800', 'gray.500')}>
@@ -31,8 +34,9 @@ function SentimenItem(props){
     if (sentiment < 0) {
         sentimentText = "Négatif"
         backGround = "orange.300"
+    } else if (sentiment === undefined){
+        sentimentText = "En attente"
     } else if (sentiment > 0.118) {
-        
         sentimentText = "Positif"
         backGround = "green.300"
     } else {

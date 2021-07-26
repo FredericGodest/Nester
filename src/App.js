@@ -12,6 +12,7 @@ import {
   theme,
   Input,
   Button,
+  VStack
 } from '@chakra-ui/react';
 
 
@@ -29,8 +30,9 @@ function App() {
   function onSubmit(e) {
     e.preventDefault();
     getTweets(hashtag).then(data => 
-      setResults(data)) 
-  };
+      setResults(data)); 
+    
+  }
 
   let data = {
     bestTweet : results.best_tweet,
@@ -47,18 +49,24 @@ function App() {
           <NavBar />
 
             <form onSubmit={onSubmit}>
-              <Input 
-                value={hashtag}
-                onChange={e => setSearch(e.target.value)}
-                placeholder="Hashtag #" 
-                textAlign='center' 
-                fontSize="30" 
-                size="lg"
-              />
+                <VStack
+                  spacing={4}
+                  align="stretch"
+                >
+                  <Input 
+                    value={hashtag}
+                    onChange={e => setSearch(e.target.value)}
+                    placeholder="Hashtag #" 
+                    textAlign='center' 
+                    fontSize="30" 
+                    size="lg"
+                  />
 
-              <Button colorScheme="teal" size="md" type="submit">
-                Rechercher
-              </Button>
+                  <Button colorScheme="teal" size="md" type="submit">
+                    Rechercher
+                  </Button>
+                </VStack>
+              
             </form>
 
           <Tweet bestAccount={data.bestAccount} bestTweet={data.bestTweet}/>

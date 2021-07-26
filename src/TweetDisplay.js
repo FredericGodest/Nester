@@ -1,8 +1,13 @@
 import { Avatar, Box, Stack, Text, useColorModeValue } from '@chakra-ui/react';
 
 export default function Tweet(props) {
-    const tweet = props.bestTweet
-    const account = props.bestAccount
+    var tweet = props.bestTweet;
+    var account = props.bestAccount;
+
+    if (tweet === undefined){
+      tweet = "Le meilleur tweet s'affichera ici"
+      account = "le meilleur compte twitter s'affichera ici"
+    }
 
   return (
     <Stack
