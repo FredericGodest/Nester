@@ -10,13 +10,13 @@ import {
   } from '@chakra-ui/react';
   import { FaGithub } from 'react-icons/fa';
   import { ReactNode } from 'react';
-  
+
   const LogoFoot = (props: any) => {
     return (
-      <img width='20%' height='auto' src='/logo.png' alt="logo" /> 
+      <img width='20%' height='auto' src='/logo.png' alt="logo" />
     );
   };
-  
+
   const SocialButton = ({
     children,
     label,
@@ -47,27 +47,16 @@ import {
       </chakra.button>
     );
   };
-  
-  export default function SmallFooter() {
+
+  export default function Footer() {
     return (
-      <Box
-        bg={useColorModeValue('gray.50', 'gray.900')}
-        color={useColorModeValue('gray.700', 'gray.200')}>
-        <Container
-          as={Stack}
-          maxW={'6xl'}
-          py={4}
-          spacing={4}
-          justify={'center'}
-          align={'center'}>
-          <LogoFoot />
-          <Stack direction={'row'} spacing={6}>
-            <Link href={'#'}>About</Link>
-            <Link href={'#'}>Contact</Link>
-          </Stack>
-        </Container>
-  
         <Box
+          as="footer"
+          role="contentinfo"
+          mx="auto"
+          maxW="7xl"
+          py="2"
+          px={{ base: '4', md: '8' }}
           borderTopWidth={1}
           borderStyle={'solid'}
           borderColor={useColorModeValue('gray.200', 'gray.700')}>
@@ -79,7 +68,7 @@ import {
             spacing={4}
             justify={{ base: 'center', md: 'space-between' }}
             align={{ base: 'center', md: 'center' }}>
-            <Text>© 2020 Chakra Templates. All rights reserved</Text>
+            <Text>© 2021 FredericGodest - MIT License</Text>
             <Stack direction={'row'} spacing={6}>
               <SocialButton label={'GitHub'} href={'https://github.com/FredericGodest/Nester'}>
                 <FaGithub />
@@ -87,6 +76,5 @@ import {
             </Stack>
           </Container>
         </Box>
-      </Box>
     );
   }
