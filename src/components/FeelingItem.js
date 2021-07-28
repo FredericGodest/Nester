@@ -35,7 +35,7 @@ function FeelingItem(props){
     let feelingText = ""
     let backGround = "gray.300"
 
-    if (feeling < 0) {
+    if (feeling < -0.01) {
         feelingText = "Négatif"
         backGround = "red.300"
     } else if (feeling === undefined){
