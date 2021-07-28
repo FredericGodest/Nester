@@ -1,68 +1,25 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Bienvenue sur Nester ! 
 
-In the project directory, you can run:
+## Présentation du projet
+Nester est le fruit d'un side-project qui a pour but d'aller chercher des tweets dans communauté française (pour le moment ?) et faire des analyses basées sur de la Data Science.
 
-### `npm start`
+On peut, par exemple, y voir une analyse de sentiment réalisée avec un algorithme de machine learning afin de savoir si le ou les tweets sont plutôt positifs, neutres ou négatifs.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+On peut (sans prétention aucune) comparer ce produit à Google Trend ou aux compteurs connectés aux réseaux sociaux.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Amusez-vous bien !!
 
-### `npm test`
+## Et d'un point de vue technique ?
+D'un point de vue technique, le projet est séparé en deux parties : le back-end et le front-end
+### Coté back-end
+Le back-end est une REST API réalisée avec FLASK qui envoie des réponses GET au format JSON. Dans le coeur du back-end on retrouve NLTK, Tweepy, Pandas, Numpy, Google Translate et un peu de regex !
+code source : [ici](https://github.com/FredericGodest/TwitterTrendAPI)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Coté front-end 
+Le front-end est réalisé en React avec ChakraUI en librairie CSS.
+code source : [ici](https://github.com/FredericGodest/Nester)
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Contributeurs
+### Frédéric Godest => Back-end + Front-end
+### Clément Avenel => Front-end + UX/UI

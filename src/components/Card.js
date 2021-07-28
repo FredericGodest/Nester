@@ -24,7 +24,7 @@ export default function Card({data}) {
      bg: "gray.300"
     }
 
-    if (data.best_sentiment < 0) {
+    if (data.best_sentiment < -0.01) {
         feeling.text = "Négatif"
         feeling.bg = "red.300"
     } else if (data.best_sentiment === undefined){
