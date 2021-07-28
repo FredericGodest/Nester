@@ -5,15 +5,10 @@ import {
   Center,
   Text,
   Stack,
-  Button,
-  ButtonGroup,
-  Link,
-  Badge,
   Skeleton,
   SkeletonText,
   useColorModeValue,
 } from '@chakra-ui/react';
-import FeelingItem from './FeelingItem.js';
 
 export default function Card({data}) {
   function renderAvatar(){
@@ -22,6 +17,27 @@ export default function Card({data}) {
    }else{
     return 'twitter'
    }
+  }
+  function renderFeeling(){
+    let feeling={
+     text: "",
+     bg: "gray.300"
+    }
+
+    if (data.best_sentiment < 0) {
+        feeling.text = "Négatif"
+        feeling.bg = "red.300"
+    } else if (data.best_sentiment === undefined){
+        feeling.text = "En attente"
+    } else if (data.best_sentiment > 0.118) {
+        feeling.text = "Positif"
+        feeling.bg = "green.300"
+    } else {
+        feeling.text = "Neutre"
+        feeling.bg = "blue.300"
+    };
+
+    return feeling.text;
   }
   return (
     <Center py={0} mx={{sm:8, md:0}}>
@@ -53,7 +69,7 @@ export default function Card({data}) {
           }}
         />
         <Heading fontSize={'2xl'} fontFamily={'body'}>
-          Membre Twitter
+          {data.best_account_name}
         </Heading>
         <Skeleton isLoaded={(data.best_account !== undefined)}>
         <Text fontWeight={600} color={'gray.500'} mb={4}>
@@ -70,20 +86,28 @@ export default function Card({data}) {
         </SkeletonText>
         <Stack direction={'row'} justify={'center'} spacing={6} mt={6}>
           <Stack spacing={0} align={'center'}>
-            <Skeleton isLoaded={(data.total_fav !== undefined)}>
-              <Text fontWeight={600}>{data.total_fav}</Text>
-            </Skeleton>
             <Text fontSize={'sm'} color={'gray.500'}>
               Likes
             </Text>
+            <Skeleton isLoaded={(data.best_fav !== undefined)} width={'5vw'} height={'4vh'}>
+              <Text fontWeight={600}>{data.best_fav}</Text>
+            </Skeleton>
           </Stack>
           <Stack spacing={0} align={'center'}>
-            <Skeleton isLoaded={(data.total_fav !== undefined)}>
-              <Text fontWeight={600}>{data.total_RT}</Text>
-            </Skeleton>
             <Text fontSize={'sm'} color={'gray.500'}>
               Retweets
             </Text>
+            <Skeleton isLoaded={(data.best_RT !== undefined)} width={'5vw'} height={'4vh'}>
+              <Text fontWeight={600}>{data.best_RT}</Text>
+            </Skeleton>
+          </Stack>
+          <Stack spacing={0} align={'center'}>
+            <Text fontSize={'sm'} color={'gray.500'}>
+              Sentiment
+            </Text>
+            <Skeleton isLoaded={(data.best_sentiment !== undefined)} width={'5vw'} height={'4vh'}>
+              <Text fontWeight={600}>{renderFeeling()}</Text>
+            </Skeleton>
           </Stack>
         </Stack>
       </Box>

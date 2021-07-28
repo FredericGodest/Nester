@@ -2,7 +2,6 @@ import {
     Box,
     chakra,
     Container,
-    Link,
     Stack,
     Text,
     useColorModeValue,
@@ -10,12 +9,6 @@ import {
   } from '@chakra-ui/react';
   import { FaGithub } from 'react-icons/fa';
   import { ReactNode } from 'react';
-
-  const LogoFoot = (props: any) => {
-    return (
-      <img width='20%' height='auto' src='/logo.png' alt="logo" />
-    );
-  };
 
   const SocialButton = ({
     children,

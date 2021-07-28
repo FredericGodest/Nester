@@ -2,9 +2,7 @@ import {
     Stat,
     StatLabel,
     StatNumber,
-    Grid,
     Box,
-    useColorModeValue,
   } from "@chakra-ui/react"
 
 function StatItem(props){

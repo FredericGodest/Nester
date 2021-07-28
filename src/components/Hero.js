@@ -10,7 +10,6 @@ import {
   InputLeftAddon,
   Stack,
   Text,
-  useBreakpointValue,
 } from '@chakra-ui/react';
 import Card from './Card.js';
 import FeelingItem from './FeelingItem.js';

@@ -10,7 +10,7 @@ function NavBar(){
         <Box m={5}>
             <Grid templateColumns="repeat(2, 1fr)" gap={3}>
                 <Text fontSize="2xl" textAlign="left ">
-                    <img width='20%' height='auto' src='/logo.png' alt="image" />
+                    <img width='20%' height='auto' src='/logo.png' alt="logo" />
                 </Text>
                 <ColorModeSwitcher justifySelf="flex-end" />
             </Grid>
