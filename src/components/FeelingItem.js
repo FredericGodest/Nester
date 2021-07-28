@@ -20,7 +20,7 @@ function StatItem(props){
             p={2}
             bg={background}
             fontSize={'sm'}
-            rounded={'full'}
+            rounded={'lg'}
             color={'white'}
             >
                 <StatLabel>{description}</StatLabel>

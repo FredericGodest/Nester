@@ -16,8 +16,15 @@ import {
 import FeelingItem from './FeelingItem.js';
 
 export default function Card({data}) {
+  function renderAvatar(){
+   if(data.best_account !== undefined){
+    return data.best_account
+   }else{
+    return 'twitter'
+   }
+  }
   return (
-    <Center py={6} mx={{sm:8, md:0}}>
+    <Center py={0} mx={{sm:8, md:0}}>
       <Box
         minW='40vw'
         maxW={'620px'}
@@ -29,9 +36,7 @@ export default function Card({data}) {
         textAlign={'center'}>
         <Avatar
           size={'xl'}
-          src={
-            'https://f.hellowork.com/blogdumoderateur/2019/11/twitter-logo.jpg'
-          }
+          src={'https://unavatar.vercel.app/twitter/' + renderAvatar()}
           alt={'Avatar Alt'}
           mb={4}
           pos={'relative'}
@@ -80,9 +85,6 @@ export default function Card({data}) {
               Retweets
             </Text>
           </Stack>
-        </Stack>
-        <Stack mt={8}>
-          <FeelingItem description="Sentiment" value={data.final_score}/>
         </Stack>
       </Box>
     </Center>

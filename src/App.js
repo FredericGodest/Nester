@@ -22,6 +22,7 @@ function App() {
 
   function onSubmit(hashtag, e) {
     e.preventDefault();
+    setData({})
     getTweets(hashtag).then(data =>
       setData(data));
   }

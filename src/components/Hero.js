@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import {
+  Badge,
   Button,
   Flex,
   Heading,
@@ -12,6 +13,7 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react';
 import Card from './Card.js';
+import FeelingItem from './FeelingItem.js';
 
 export default function Hero({data, onSubmit}) {
   const [hashtag, setSearch] = useState('');
@@ -22,26 +24,16 @@ export default function Hero({data, onSubmit}) {
           <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
             <Text
               as={'span'}
-              position={'relative'}
-              _after={{
-                content: "''",
-                width: 'full',
-                height: useBreakpointValue({ base: '20%', md: '30%' }),
-                position: 'absolute',
-                bottom: 1,
-                left: 0,
-                bg: 'blue.400',
-                zIndex: -1,
-              }}>
+              position={'relative'}>
               Comment vas-tu,
             </Text>
             <br />{' '}
             <Text color={'blue.400'} as={'span'}>
-              petit tweet ?
+              petit hashtag ?
             </Text>{' '}
           </Heading>
           <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
-            Nester récupère le meilleur tweet selon un hashtag, puis fait une analyse de sentiment. Essayez ci-dessous !
+            Nester permet de visualiser le sentiment global de la Twittosphère à propos d'un hashtag.
           </Text>
           <form onSubmit={(e) => onSubmit(hashtag, e)}>
            <Stack direction={{ base: 'column', md: 'row' }} spacing={2}>
@@ -73,10 +65,18 @@ export default function Hero({data, onSubmit}) {
              </Button>
            </Stack>
           </form>
+          <FeelingItem description="Sentiment global" value={data.final_score}/>
         </Stack>
       </Flex>
-      <Flex flex={1}>
+      <Flex flex={1} align={'center'} justify={'center'}>
+       <Stack direction={'column'} align={'flex-end'}>
+          <Text fontSize="sm">
+           <Badge ml="1" fontSize="0.8em" colorScheme="green" variant="subtle">
+             Tweet le plus populaire
+           </Badge>
+         </Text>
         <Card data={data}/>
+       </Stack>
       </Flex>
     </Stack>
   );
