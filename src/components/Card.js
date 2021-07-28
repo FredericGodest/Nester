@@ -29,7 +29,7 @@ export default function Card({data}) {
         feeling.bg = "red.300"
     } else if (data.best_sentiment === undefined){
         feeling.text = "En attente"
-    } else if (data.best_sentiment > 0.118) {
+    } else if (data.best_sentiment > 0.12) {
         feeling.text = "Positif"
         feeling.bg = "green.300"
     } else {
