@@ -40,7 +40,7 @@ function FeelingItem(props){
         backGround = "red.300"
     } else if (feeling === undefined){
         feelingText = "En attente"
-    } else if (feeling > 0.118) {
+    } else if (feeling > 0.2) {
         feelingText = "Positif"
         backGround = "green.300"
     } else {
